@@ -16,6 +16,8 @@ def heuristic(t, selected, words_cap, topics, limit):
         indices of selected topics
     words_cap : dict
         counts of words of selected topics
+    topics: list of list of identifier tokens
+        Tokens can represent word or vocab identifiers
     limit : int
         Parameter controlling uniqueness of topics. 
         
