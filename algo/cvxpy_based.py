@@ -15,8 +15,9 @@ def create_basic_mip(scores, final_num_topics):
 
     Returns
     -------
-    Gurobipy MIP model
-    list of model binary variables denoting topic choice
+    cvpxy objective
+    cvpxy constraints
+    cvpxy variables
     
     """
     
