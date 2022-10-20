@@ -2,7 +2,7 @@
 
 ## ReIntNTM
 
-Towards (Re)interpreting Neural Topic Models via Composite Activations, EMNLP'22
+Towards Reinterpreting Neural Topic Models via Composite Activations, EMNLP'22
 
 ---
 
@@ -18,9 +18,9 @@ Steps:
 1. **Train** and obtain a topic-word distribution from a Neural Topic Model
 2. **Mining Step** to generate a pool of candidate topics (both composite & original)
 3. **Solving Step** using following formulations optimizing preferred metric(s)
-	a. Greedy using Heuristics 
-	b. Multi-Dimensional Knapsack Problem (MDKP)
-	c. Maximum-Weight Budget Independent Set (MWBIS)
+	1. Greedy using Heuristics 
+	2. Multi-Dimensional Knapsack Problem (MDKP)
+	3. Maximum-Weight Budget Independent Set (MWBIS)
 
 While the solving step utilises estimated scores using [gensim](https://radimrehurek.com/gensim/), we recommend the final evaluation to be conducted on a large reference corpus such as [Palmetto](https://github.com/dice-group/Palmetto).
 
@@ -38,9 +38,9 @@ Your choice of solver (either):
 python -m pip install gurobipy
 ~~~
 2) solvers via CVXPY [installation instructions](https://www.cvxpy.org/install/index.html)
-	a) with gurobipy solver (see 1.)
-	b) with [GLPK_MI](https://www.gnu.org/software/glpk/) via [CVXOPT](https://cvxopt.org/) (no-license)
-	c) with [SCIP](www.scipopt.org), [installation instructions](https://www.cvxpy.org/examples/basic/mixed_integer_quadratic_program.html) (no-license & recommended)
+	1. with gurobipy solver (see 1.)
+	2. with [GLPK_MI](https://www.gnu.org/software/glpk/) via [CVXOPT](https://cvxopt.org/) (no-license)
+	3. with [SCIP](www.scipopt.org), [installation instructions](https://www.cvxpy.org/examples/basic/mixed_integer_quadratic_program.html) (recommended no-license)
 ~~~
 conda install cvxpy cvxopt numpy pyscipopt==3.5.0 -c conda-forge
 ~~~
@@ -61,17 +61,17 @@ Examples were ran on python 3.6, AMD EPYC 7502 @ 2.50GHz, 512GB RAM
 ---
 ### Tutorials/Examples
 1. gp_example.ipynb
-	a) solver examples using gurobipy directly
-	b) greedy heuristic examples
-	c) topic examples from play data
+	1. solver examples using gurobipy directly
+	2. greedy heuristic examples
+	3. topic examples from play data
 2. cvxpy_example.ipynb
-	a) solver examples using CVXPY with various solvers
+	* solver examples using CVXPY with various solvers
 3. mining_example.ipynb
-	a) demonstration of the complete pipeline
+	* demonstration of the complete pipeline
         
 ---
 ### Ethics Statement
-We understand that some corpus might produce topics with group of words that might cause offense due to possible sensitiveness regarding politically-charged affairs. This mainly affects the news corpus as they are built on historical events. The use of the re-interpretation process is largely dependent on the corpus that NTM is trained on.
+We understand that some corpus might produce topics with group of words that might cause offense due to possible sensitiveness regarding politically-charged affairs. This mainly affects the news corpus as they are built on historical events. The use of the reinterpretation process is largely dependent on the corpus that NTM is trained on.
 
 ### Citation
 If you find our work helpful, we appreciate a citation!
