@@ -1,0 +1,80 @@
+
+
+## ReIntNTM
+
+Towards (Re)interpreting Neural Topic Models via Composite Activations, EMNLP'22
+
+---
+
+### Key Idea
+
+What we consider to be topics (from a neural topic-word distribution) can be combined to form **better** topics via compositions, and hence, a better interpretation of the **same** topic-word distribution.
+
+---
+### Model-Free Approach
+
+Steps:
+
+1. **Train** and obtain a topic-word distribution from a Neural Topic Model
+2. **Mining Step** to generate a pool of candidate topics (both composite & original)
+3. **Solving Step** using following formulations optimizing preferred metric(s)
+	a. Greedy using Heuristics 
+	b. Multi-Dimensional Knapsack Problem (MDKP)
+	c. Maximum-Weight Budget Independent Set (MWBIS)
+
+While the solving step utilises estimated scores using [gensim](https://radimrehurek.com/gensim/), we recommend the final evaluation to be conducted on a large reference corpus such as [Palmetto](https://github.com/dice-group/Palmetto).
+
+---
+
+### Requirements
+
+Python >= 3.6
+
+Your choice of solver (either):
+
+1) using gurobipy directly: [installation instructions](https://www.gurobi.com/documentation/9.5/quickstart_linux/cs_using_pip_to_install_gr.html) (license required)
+
+~~~
+python -m pip install gurobipy
+~~~
+2) solvers via CVXPY [installation instructions](https://www.cvxpy.org/install/index.html)
+	a) with gurobipy solver (see 1.)
+	b) with [GLPK_MI](https://www.gnu.org/software/glpk/) via [CVXOPT](https://cvxopt.org/) (no-license)
+	c) with [SCIP](www.scipopt.org), [installation instructions](https://www.cvxpy.org/examples/basic/mixed_integer_quadratic_program.html) (no-license & recommended)
+~~~
+conda install cvxpy cvxopt numpy pyscipopt==3.5.0 -c conda-forge
+~~~
+More details on using CVXPY found [here](https://www.cvxpy.org/tutorial/advanced/index.html#mixed-integer-programs)
+
+---
+### Play data provided
+Trained using [OCTIS by MIND-Lab](https://github.com/MIND-Lab/OCTIS/tree/master/octis), CTM [(Bianchi et al. 2021)](https://www.aclweb.org/anthology/2021.eacl-main.143/) model with 20 and 50 topics generating a  pool of 988 and 1414 composite and component topics .
+
+---
+### Code
+1. algo/cvxpy_based.py - CVXPY-based solutions for MWBIS & MDKP
+2. algo/gp_based.py - gurobipy-based solutions for MWBIS & MDKP
+3. algo/normal.py - heuristics-based greedy solution & utility functions
+
+Examples were ran on python 3.6, AMD EPYC 7502 @ 2.50GHz, 512GB RAM
+
+---
+### Tutorials/Examples
+1. gp_example.ipynb
+	a) solver examples using gurobipy directly
+	b) greedy heuristic examples
+	c) topic examples from play data
+2. cvxpy_example.ipynb
+	a) solver examples using CVXPY with various solvers
+3. mining_example.ipynb
+	a) demonstration of the complete pipeline
+        
+---
+### Ethics Statement
+We understand that some corpus might produce topics with group of words that might cause offense due to possible sensitiveness regarding politically-charged affairs. This mainly affects the news corpus as they are built on historical events. The use of the re-interpretation process is largely dependent on the corpus that NTM is trained on.
+
+### Citation
+If you find our work helpful, we appreciate a citation!
+~~~
+to be generated
+~~~
