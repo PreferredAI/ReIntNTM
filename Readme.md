@@ -76,5 +76,17 @@ We understand that some corpus might produce topics with group of words that mig
 ### Citation
 If you find our work helpful, we appreciate a citation!
 ~~~
-to be generated
+@inproceedings{lim-lauw-2022-towards,
+    title = "Towards Reinterpreting Neural Topic Models via Composite Activations",
+    author = "Lim, Jia Peng  and
+      Lauw, Hady",
+    booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.emnlp-main.242",
+    pages = "3688--3703",
+    abstract = "Most Neural Topic Models (NTM) use a variational auto-encoder framework producing K topics limited to the size of the encoder{'}s output. These topics are interpreted through the selection of the top activated words via the weights or reconstructed vector of the decoder that are directly connected to each neuron. In this paper, we present a model-free two-stage process to reinterpret NTM and derive further insights on the state of the trained model. Firstly, building on the original information from a trained NTM, we generate a pool of potential candidate {``}composite topics{''} by exploiting possible co-occurrences within the original set of topics, which decouples the strict interpretation of topics from the original NTM. This is followed by a combinatorial formulation to select a final set of composite topics, which we evaluate for coherence and diversity on a large external corpus. Lastly, we employ a user study to derive further insights on the reinterpretation process.",
+}
 ~~~
