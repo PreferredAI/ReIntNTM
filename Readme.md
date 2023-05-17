@@ -11,7 +11,7 @@ Towards Reinterpreting Neural Topic Models via Composite Activations, EMNLP'22
 What we consider to be topics (from a neural topic-word distribution) can be combined to form **better** topics via compositions, and hence, a better interpretation of the **same** topic-word distribution.
 
 ---
-### Model-Free Approach
+### Neural Topic Model-Agnostic Approach
 
 Steps:
 
@@ -40,7 +40,7 @@ python -m pip install gurobipy
 2) solvers via CVXPY [installation instructions](https://www.cvxpy.org/install/index.html)
 	1. with gurobipy solver (see 1.)
 	2. with [GLPK_MI](https://www.gnu.org/software/glpk/) via [CVXOPT](https://cvxopt.org/) (no-license)
-	3. with [SCIP](www.scipopt.org), [installation instructions](https://www.cvxpy.org/examples/basic/mixed_integer_quadratic_program.html) (recommended no-license)
+	3. with [SCIP](https://www.scipopt.org), [installation instructions](https://www.cvxpy.org/examples/basic/mixed_integer_quadratic_program.html) (recommended no-license)
 ~~~
 conda install cvxpy cvxopt numpy pyscipopt==3.5.0 -c conda-forge
 ~~~
