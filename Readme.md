@@ -75,6 +75,8 @@ We understand that some corpus might produce topics with group of words that mig
 ---
 
 ### Errata
+Typo, does not affect any results. 
+
 Definition of NPMI (Equation 2) should be:
 
 $\textrm{NPMI}(\mathcal{T}) = \frac{1}{K} \sum_{t \in \mathcal{T}} \frac{\sum_{n_i \in t}\sum_{\substack{n_j \in t,\\ n_j \neq n_i}} npmi(n_i,n_j)}{l(l-1)}$
