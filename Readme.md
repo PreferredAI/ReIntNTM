@@ -72,6 +72,17 @@ Examples were ran on python 3.6, AMD EPYC 7502 @ 2.50GHz, 512GB RAM
 ---
 ### Ethics Statement
 We understand that some corpus might produce topics with group of words that might cause offense due to possible sensitiveness regarding politically-charged affairs. This mainly affects the news corpus as they are built on historical events. The use of the reinterpretation process is largely dependent on the corpus that NTM is trained on.
+---
+
+### Errata
+Definition of NPMI (Equation 2) should be:
+
+$\textrm{NPMI}(\mathcal{T}) = \frac{1}{K} \sum_{t \in \mathcal{T}} \frac{\sum_{n_i \in t}\sum_{\substack{n_j \in t,\\ n_j \neq n_i}} npmi(n_i,n_j)}{l(l-1)}$
+
+Instead of:
+
+$\textrm{NPMI}(\mathcal{T}) = \frac{1}{K} \sum_{t \in \mathcal{T}} \frac{\sum_{n_i \in t}\sum_{\substack{n_j \in t,\\ n_j \neq n_i}} npmi(n_i,n_j)}{l(l-1)/2}$
+
 
 ### Citation
 If you find our work helpful, we appreciate a citation!
