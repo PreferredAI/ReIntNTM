@@ -1,3 +1,9 @@
+'''
+Author: Jia Peng Lim
+github: https://github.com/PreferredAI/ReIntNTM
+Paper: Towards Reinterpreting Neural Topic Models via Composite Activations
+'''
+
 import cvxpy as cp
 from collections import defaultdict
 import numpy as np

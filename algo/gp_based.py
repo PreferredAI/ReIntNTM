@@ -1,3 +1,9 @@
+'''
+Author: Jia Peng Lim
+github: https://github.com/PreferredAI/ReIntNTM
+Paper: Towards Reinterpreting Neural Topic Models via Composite Activations
+'''
+
 import gurobipy as gp
 from gurobipy import GRB
 from collections import defaultdict
