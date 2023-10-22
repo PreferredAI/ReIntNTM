@@ -116,14 +116,16 @@ def calculate_compositions(beta, topic_combinations, add_pairs=True):
         
     Returns
     -------
-    int
-        Number of unique tokens
+    logits List[1-d array]
+        Mean logits of selected topic_combinations
+    topic_combinations
+        of corresponding logits
     """
 
-    calculations = []
+    logits = []
     existing_pairs = set()
     for t in topic_combinations:
-        calculations.append(np.sum(beta[:,t], axis=1))
+        logits.append(np.sum(beta[:,t], axis=1))
         if len(t) == 2:
             if t[1] > t[0]:
                 existing_pairs.add(tuple(t))
@@ -135,6 +137,6 @@ def calculate_compositions(beta, topic_combinations, add_pairs=True):
         for i,j in combinations(list(range(beta.shape[-1])),2):
             if (i,j) not in existing_pairs:
                 topic_combinations.append((i,j))
-                calculations.append(np.sum(beta[:,[i,j]], axis=1))
+                logits.append(np.sum(beta[:,[i,j]], axis=1))
             
-    return calculations, topic_combinations
+    return logits, topic_combinations
