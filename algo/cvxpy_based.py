@@ -63,7 +63,7 @@ def mdkp(topics, scores, final_num_topics, epsilon,
         indicating which topics are chosen
     """
     if not solver:
-        solver = cp.GLPK_MI
+        solver = cp.SCIP
     if not solver_options:
         solver_options = {}
         
@@ -119,7 +119,7 @@ def mwbis(topics, scores, final_num_topics, epsilon,
         indicating which topics are chosen
     """
     if not solver:
-        solver = cp.GLPK_MI
+        solver = cp.SCIP
     if not solver_options:
         solver_options = {}
         
